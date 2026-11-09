@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#140914">
+  <meta name="description" content="A romantic interactive birthday experience made with love.">
+  <title>Happy Birthday, My Love ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="loader-heart">♥</div>
+    <p>Preparing a little magic...</p>
+  </div>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
+  <div class="particle-layer" id="particleLayer" aria-hidden="true"></div>
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav">
+    <a class="brand" href="#home" aria-label="Go to home">♥ <span>Our Story</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#birthday">Birthday</a>
+      <a href="#memories">Memories</a>
+      <a href="#why-you">Why You</a>
+      <a href="#letter">Letter</a>
+      <a href="#surprise">Surprise</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="intro-screen" id="home">
+      <div class="intro-orbit orbit-one"></div>
+      <div class="intro-orbit orbit-two"></div>
+      <div class="intro-content">
+        <p class="eyebrow reveal">A tiny surprise, made with love</p>
+        <h1 class="intro-title">
+          <span class="intro-line">I have a little</span>
+          <span class="intro-line script">surprise for you...</span>
+        </h1>
+        <p class="intro-subtitle reveal delay-2">For the most special person in my life <span>♥</span></p>
+        <button class="primary-btn pulse-btn" id="openSurprise">
+          <span>Open Your Surprise</span><span class="btn-icon">🎁</span>
+        </button>
+        <p class="scroll-hint">Tap the button when you're ready <span>↓</span></p>
+      </div>
+    </section>
+
+    <section class="section birthday-section" id="birthday">
+      <div class="section-glow"></div>
+      <div class="container birthday-layout">
+        <div class="birthday-copy reveal-on-scroll">
+          <p class="eyebrow">Today is yours</p>
+          <h2>Happy Birthday,<br><span class="script" data-name>My Love</span> <span class="heart-text">♥</span></h2>
+          <p class="lead">Today is not just another day...</p>
+          <p>It's the day the world became a little more beautiful because you were born.</p>
+          <button class="outline-btn" id="wishBtn">Make a Wish <span>✨</span></button>
+        </div>
+
+        <div class="cake-scene reveal-on-scroll">
+          <div class="cake-glow"></div>
+          <div class="cake">
+            <div class="candles">
+              <button class="candle" aria-label="Candle 1"><span class="flame"></span></button>
+              <button class="candle" aria-label="Candle 2"><span class="flame"></span></button>
+              <button class="candle" aria-label="Candle 3"><span class="flame"></span></button>
+            </div>
+            <div class="cake-top"></div>
+            <div class="cake-body"><span></span><span></span><span></span></div>
+            <div class="cake-plate"></div>
+          </div>
+          <p class="cake-caption">Make a wish. I'll make sure the universe hears it. ✨</p>
+        </div>
+      </div>
+      <div class="wish-message" id="wishMessage">
+        <span class="sparkle">✦</span>
+        <strong>I hope every wish you make comes true.</strong>
+        <span>♥</span>
+      </div>
+    </section>
+
+    <section class="section message-section" id="message">
+      <div class="container narrow">
+        <p class="eyebrow reveal-on-scroll">From my heart to yours</p>
+        <h2 class="section-title reveal-on-scroll">A Little Message From My Heart <span>💌</span></h2>
+        <div class="glass-letter reveal-on-scroll">
+          <div class="letter-decoration">“</div>
+          <p id="typewriter" class="typewriter" aria-live="polite"></p>
+          <span class="typing-cursor" id="typingCursor"></span>
+          <div class="letter-line"></div>
+          <p class="signature script" data-your-name>Forever yours</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section memories-section" id="memories">
+      <div class="container">
+        <div class="section-heading reveal-on-scroll">
+          <p class="eyebrow">Little pieces of us</p>
+          <h2 class="section-title">Our Little Memories <span>📸</span></h2>
+          <p>Some moments become memories. Some memories become home.</p>
+        </div>
+        <div class="memory-grid" id="memoryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section why-section" id="why-you">
+      <div class="container">
+        <div class="section-heading reveal-on-scroll">
+          <p class="eyebrow">If I had to explain...</p>
+          <h2 class="section-title">Why You're So Special <span>♥</span></h2>
+        </div>
+        <div class="reasons-grid" id="reasonsGrid"></div>
+      </div>
+    </section>
+
+    <section class="counter-section">
+      <div class="container counter-grid">
+        <div class="counter-card reveal-on-scroll">
+          <span class="counter-number" data-count="365">0</span><span class="counter-plus">+</span>
+          <span class="counter-label">Beautiful Moments</span>
+        </div>
+        <div class="counter-card reveal-on-scroll">
+          <span class="counter-number" data-count="1000">0</span><span class="counter-plus">+</span>
+          <span class="counter-label">Reasons To Smile</span>
+        </div>
+        <div class="counter-card reveal-on-scroll">
+          <span class="infinity">∞</span>
+          <span class="counter-label">Reasons To Love You</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section countdown-section" id="countdown">
+      <div class="container narrow center">
+        <p class="eyebrow reveal-on-scroll">Until your special day</p>
+        <h2 class="section-title reveal-on-scroll">Counting Down To Your Special Day 🎂</h2>
+        <div class="countdown" id="countdownTimer">
+          <div class="time-box"><strong id="days">00</strong><span>Days</span></div>
+          <div class="time-box"><strong id="hours">00</strong><span>Hours</span></div>
+          <div class="time-box"><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div class="time-box"><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+        <div class="birthday-live" id="birthdayLive">IT'S YOUR BIRTHDAY!!! 🎉❤️</div>
+      </div>
+    </section>
+
+    <section class="section letter-section" id="letter">
+      <div class="container narrow">
+        <div class="paper-letter reveal-on-scroll">
+          <div class="paper-hearts">♥ ♥ ♥</div>
+          <p class="eyebrow">A letter for you</p>
+          <h2 class="section-title">A Letter For You 💌</h2>
+          <div class="letter-content">
+            <p>Dear <span data-name>My Love</span>,</p>
+            <p>Today is your birthday, but somehow I feel like I'm the lucky one for getting to know someone like you.</p>
+            <p>Thank you for the smiles, the conversations, the memories, the little moments, and simply for being you.</p>
+            <p>I hope this new year of your life brings you everything your heart wishes for. I hope you keep finding reasons to laugh, dreams worth chasing, and people who remind you just how wonderful you are.</p>
+            <p>Keep smiling.<br>Keep dreaming.<br>Keep being the amazing person you are.</p>
+            <p class="script closing">Happy Birthday, My Love. ♥</p>
+            <p class="signature-block">Forever yours,<br><span class="script" data-your-name>Your Name</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surprise-section" id="surprise">
+      <div class="surprise-stars"></div>
+      <div class="container narrow center">
+        <p class="eyebrow">One more thing...</p>
+        <h2 class="section-title">There is still one more surprise... 👀</h2>
+        <p class="surprise-intro">You made it this far, so I think you're ready.</p>
+        <button class="primary-btn" id="secretBtn">Click If You're Ready <span>♥</span></button>
+      </div>
+    </section>
+
+    <section class="final-section">
+      <div class="final-heart">♥</div>
+      <div class="final-content">
+        <p class="eyebrow">One Last Thing...</p>
+        <h2>Thank you for being you.</h2>
+        <p class="final-birthday">Happy Birthday, <span data-name>My Love</span> <span>♥</span></p>
+        <p>I hope this little website made you smile.</p>
+        <p class="script final-signature">Made with ♥ just for you</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="secret-overlay" id="secretOverlay" aria-hidden="true">
+    <div class="secret-card">
+      <button class="modal-close" id="secretClose" aria-label="Close surprise">×</button>
+      <div class="secret-heart">♥</div>
+      <p class="eyebrow">This is the part I really mean</p>
+      <h2>No matter where life takes us...</h2>
+      <p>No matter where life takes us, I hope you always remember how loved, appreciated and special you are.</p>
+      <p class="script secret-name">Happy Birthday, <span data-name>My Love</span> ♥</p>
+      <div class="secret-sparkles">✦ ✧ ✦</div>
+    </div>
+  </div>
+
+  <div class="image-modal" id="imageModal" aria-hidden="true">
+    <button class="modal-close" id="modalClose" aria-label="Close image viewer">×</button>
+    <div class="modal-image-wrap">
+      <img id="modalImage" src="" alt="">
+      <p id="modalCaption"></p>
+    </div>
+  </div>
+
+  <div class="music-player" id="musicPlayer">
+    <button class="music-toggle" id="musicToggle" aria-label="Play music">▶</button>
+    <div class="music-info">
+      <span class="music-note">♪</span>
+      <div><small>Now playing</small><strong id="songTitle">Our Song</strong></div>
+    </div>
+    <input id="volumeControl" type="range" min="0" max="1" step="0.01" value="0.65" aria-label="Volume">
+    <audio id="birthdayAudio" loop preload="metadata"></audio>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
